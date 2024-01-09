@@ -1,0 +1,182 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 1.5em;
+    text-align: center;
+    padding: 1em;
+    flex-flow: column;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    filter: drop-shadow(2px 4px 6px black);
+}
+header a {
+    color:#c7bca6;
+}
+
+#logo {
+    width: 18em;
+    height: auto;
+    filter: invert(100%);
+    margin: 1em 1em 1em 0;
+}
+
+#GitHubLinks {
+    color: #000000;
+    flex-flow: column;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.9em;
+    margin: 1em 0;
+}
+
+button {
+    background: url(assets/pngwing2.com.png);
+    background-color: #ffffff;
+    background-position: center;
+    border-radius: 2em;
+    padding: 1.5em;
+    background-size: 2.6em;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: none;
+    filter: invert(100%);
+    transition-duration: 50ms;
+    transition-timing-function: ease-in-out;
+}
+
+.goUpVis {
+    opacity: 1;
+    cursor: pointer;
+    padding: 1.3em;
+}
+
+.goUpNonVis {
+    opacity: 0;
+    cursor: default;
+    padding: 0;
+}
+
+#Menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    position: fixed;
+    border-radius: 1em;
+
+}
+
+#Menu ul {
+    padding: 0;
+}
+
+#Menu li {
+    padding: 0; 
+}
+
+#Menu a {
+    display: block;
+    padding: 0.5em 0.7em;
+    margin: 0.7em;
+    list-style-type: none;
+    font-size: 1.2em;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 1em ;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2em 1em;
+    text-align: center;
+}
+
+h2 {
+    padding: 1em;
+}
+
+section{
+    margin: 0 auto;
+    width: 70%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+#files, #TheTeam {
+    text-align: left;
+    list-style-type: circle;
+    padding: 0em 0em 1em 0em;
+}
+
+
+section #TheTeam ul {
+    flex-flow: column;
+    display:grid;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.folder {
+    list-style-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 16 16"%3E%3Cpath fill="currentColor" d="M.513 1.513A1.75 1.75 0 0 1 1.75 1h3.5c.55 0 1.07.26 1.4.7l.9 1.2a.25.25 0 0 0 .2.1H13a1 1 0 0 1 1 1v.5H2.75a.75.75 0 0 0 0 1.5h11.978a1 1 0 0 1 .994 1.117L15 13.25A1.75 1.75 0 0 1 13.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75c0-.464.184-.91.513-1.237"%2F%3E%3C%2Fsvg%3E');
+}
+
+.file {
+    list-style-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 16 16"%3E%3Cpath fill="currentColor" d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013l-2.914-2.914z"%2F%3E%3C%2Fsvg%3E');
+}
+
+li {
+    padding: 1em;
+}
+
+#files a{
+    font-size: 1em;
+    color:rgb(33, 33, 33);
+}
+
+footer {
+    text-align: center;
+    color:#c7bca6;
+    background-color: #000000;
+    padding: 1em;
+    filter: drop-shadow(2px 4px 6px black);
+}
+#TheTeam ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding: 0.5em;
+}
+
+#TheTeam li {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+#TheTeam li:last-child {
+    grid-column: 2 / span 1;
+}
+
