@@ -197,3 +197,35 @@ footer {
 #TheTeam li:last-child {
     grid-column: 2 / span 1;
 }
+
+@media screen and (max-width: 700px) {
+    #TheTeam ul {
+        grid-template-columns: auto;
+        margin:1em;
+    }
+    #TheTeam li:last-child{
+        grid-column: 1 / span 1;
+    }
+    #TheTeam li {
+        margin: 0.2em;
+    }
+
+}
+@media screen and (max-width: 1250px) {
+    #Menu {
+        align-self: flex-end;
+        display: grid;
+        grid-template-columns: repeat(2, 0.5fr);
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #Menu ul {
+        display: inline-flex;
+        align-items: center;
+    }
+    #Menu {
+        align-self: center;
+    }
+}
