@@ -16,6 +16,17 @@ document.addEventListener("scroll", function(){
     }
 });
 
+document.addEventListener("FolderTree", function() {
+    var toggler = document.getElementsByClassName("Folder");
+
+    for (var i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function() {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("Folder-open");
+        });
+
+}
+});
 const candidatura = document.getElementById('Candidatura');
 const rtb = document.getElementById('RTB');
 const team = document.getElementById('Team');
