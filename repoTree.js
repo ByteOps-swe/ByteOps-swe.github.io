@@ -49,10 +49,10 @@ function generateHTML(folderTree, top = true) {
       html += `<li class="${item.type}">`;
     }
     if (item.type === 'folder') {
-      html += `<span class="Folder"><a href="${item.html_url}">${item.name}</a></span>`;
+      html += `<span class="Folder"></span><a href="${item.html_url}" target="_blank">${item.name}</a>`;
       html += generateHTML(item.children, false);
     } else {
-      html += `<a href="${item.html_url}">${item.name}</a>`;
+      html += `<a href="${item.html_url}" target="_blank">${item.name}</a>`;
     }
     html += '</li>';
   }
