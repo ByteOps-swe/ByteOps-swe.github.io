@@ -1,40 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
+    background-color: #181b1f;
 }
 
 body {
     font-family: 'Arial', sans-serif;
+    color: #ffffff;
     margin: 0;
     padding: 0;
 }
 
-
 header {
-    background-color: #000000;
-    color: #fff;
-    padding: 1.5em;
-    text-align: center;
-    padding: 1em;
-    flex-flow: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    filter: drop-shadow(2px 4px 6px black);
+    background-color: #384359;
+    transition: 0.6s;
+    filter: drop-shadow(0px 4px 13px #fc7d42);
+    align-items: center;
+    z-index: 10000;
 }
+
 header a {
-    color:#c7bca6;
+    color:#ecdbba;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    padding-right: 2em; 
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    margin: 0;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.banner {
+    background-color: #181b1f;
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    background-size: cover;
+    box-shadow: none;
 }
 
 #logo {
-    width: 18em;
-    height: auto;
-    filter: invert(100%);
-    margin: 1em 1em 1em 0;
+    position: relative;
+    width: 10em;
+    padding-left: 2em;
 }
 
 #GitHubLinks {
-    color: #000000;
     flex-flow: column;
     display: flex;
     flex-direction: column;
@@ -45,17 +80,16 @@ header a {
 
 button {
     background: url(assets/pngwing2.com.png);
-    background-color: #ffffff;
+    background-color: #fc7d42;
     background-position: center;
-    border-radius: 2em;
-    padding: 1.5em;
-    background-size: 2.6em;
-    background-repeat: no-repeat;
+    border-radius: 10px;
+    background-size: 2.5em;
     cursor: pointer;
     border: none;
-    filter: invert(100%);
-    transition-duration: 50ms;
+    transition-duration: 200ms;
     transition-timing-function: ease-in-out;
+    position: fixed;
+    margin-top: 45%;
 }
 
 .goUpVis {
@@ -67,40 +101,17 @@ button {
 .goUpNonVis {
     opacity: 0;
     cursor: default;
-    padding: 0;
-}
-
-#Menu {
-    display: flex;
-    align-items: center;
-    margin: 0 0 0 1em;
-    position: fixed;
-    border-radius: 1em;
-}
-
-#Menu ul {
-    padding: 0;
-}
-
-#Menu li {
-    padding: 0; 
-}
-
-#Menu a {
-    display: block;
-    padding: 0.5em 0.7em;
-    margin: 0.7em;
-    list-style-type: none;
-    font-size: 1.2em;
-    color: #000000;
-    background-color: #ffffff;
-    border-radius: 1em ;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 a {
     text-decoration: none;
 }
+
+header li:hover {
+    border-radius: 5px;
+    box-shadow: 5px 3px 10px 5px #181b1f;
+}
+
 a:hover {
     text-decoration: underline;
 }
@@ -119,11 +130,12 @@ h2 {
 }
 
 section{
+    background-color: #384359;
     margin: 1em 0;
     align-self: center;
     width: 100%;
     max-width: 1000px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 15px 1px #000;
     border-radius: 10px;
 }
 #files, #TheTeam {
@@ -151,17 +163,18 @@ ul {
 }
 
 .Folder::before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z'/%3E%3C/svg%3E");
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 16 16'%3E%3Cpath fill='%23ecdbba' d='M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z'/%3E%3C/svg%3E");
     display: inline-block;
     margin-right: 6px;
 }
 
 .Folder-open::before {
-    content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 16 16"%3E%3Cpath fill="currentColor" d="M.513 1.513A1.75 1.75 0 0 1 1.75 1h3.5c.55 0 1.07.26 1.4.7l.9 1.2a.25.25 0 0 0 .2.1H13a1 1 0 0 1 1 1v.5H2.75a.75.75 0 0 0 0 1.5h11.978a1 1 0 0 1 .994 1.117L15 13.25A1.75 1.75 0 0 1 13.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75c0-.464.184-.91.513-1.237"%2F%3E%3C%2Fsvg%3E');
+    content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 16 16"%3E%3Cpath fill="%23ecdbba" d="M.513 1.513A1.75 1.75 0 0 1 1.75 1h3.5c.55 0 1.07.26 1.4.7l.9 1.2a.25.25 0 0 0 .2.1H13a1 1 0 0 1 1 1v.5H2.75a.75.75 0 0 0 0 1.5h11.978a1 1 0 0 1 .994 1.117L15 13.25A1.75 1.75 0 0 1 13.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75c0-.464.184-.91.513-1.237"%2F%3E%3C%2Fsvg%3E');
 }
 
 .file {
-    list-style-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 16 16"%3E%3Cpath fill="currentColor" d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013l-2.914-2.914z"%2F%3E%3C%2Fsvg%3E');
+    padding-left: 1em;
+    list-style-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" viewBox="0 0 16 16"%3E%3Cpath fill="%23ecdbba" d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013l-2.914-2.914z"%2F%3E%3C%2Fsvg%3E');
 }
 
 li {
@@ -170,16 +183,17 @@ li {
 
 #files a{
     font-size: 1em;
-    color:rgb(33, 33, 33);
+    color:#ffffff;
 }
+
 
 .nested {
-    display: none;
+    padding-left: 3em;
+    display: block;
 }
 
-  
 .active {
-    display: block;
+    display: none;
 }
 
 #Loading {
@@ -192,17 +206,18 @@ li {
 #files p {
     text-align: center;
     margin: 0;
-    color: grey;
+    color: #ecdbba;
 
 }
 
 footer {
     text-align: center;
-    color:#c7bca6;
-    background-color: #000000;
+    color:#ecdbba;
+    background-color: #0b0f14;
     padding: 1em;
-    filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(0 1px 5px #ff5100);
 }
+
 #TheTeam ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -213,7 +228,7 @@ footer {
 
 #TheTeam li {
     text-align: center;
-    background-color: #f2f2f2;
+    background-color: #384359;
     padding: 10px;
     border-radius: 5px;
 }
