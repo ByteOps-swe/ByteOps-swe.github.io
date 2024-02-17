@@ -145,6 +145,10 @@ section{
 }
 
 
+#TheTeam a {
+    color: #ffffff;
+}
+
 section #TheTeam ul {
     flex-flow: column;
     display:grid;
