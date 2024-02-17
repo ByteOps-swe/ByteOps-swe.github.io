@@ -43,13 +43,13 @@ function generateHTML(folderTree, top = true) {
     html = '<ul class="nested">';
   }
   for (const item of folderTree) {
-    if(item.name === 'RTB' || item.name === 'Candidatura'){
+    if(item.name === 'RTB' || item.name === 'Candidatura' || item.name === 'Candidatura RTB.pdf' ){
       html += `<li id="${item.name}" class="${item.type}">`;
     } else {
       html += `<li class="${item.type}">`;
     }
     if (item.type === 'folder') {
-      html += `<span class="Folder"><a href="${item.html_url}">${item.name}</a></span>`;
+      html += `<span class="Folder"><a href="#${item.name}">${item.name}</a></span>`;
       html += generateHTML(item.children, false);
     } else {
       html += `<a href="${item.html_url}">${item.name}</a>`;
