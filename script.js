@@ -3,7 +3,6 @@ function goUp(){
         top: 0,
         behavior: 'smooth'
     })
-
 }
 
 document.addEventListener("scroll", function(){
@@ -25,8 +24,5 @@ document.addEventListener("FolderTree", function() {
             this.classList.toggle("Folder-open");
         });
 
-}
+    }
 });
-const candidatura = document.getElementById('Candidatura');
-const rtb = document.getElementById('RTB');
-const team = document.getElementById('Team');
