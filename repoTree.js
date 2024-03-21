@@ -35,22 +35,45 @@ try {
 }
 }
 
-function generateHTML(folderTree, top = true) {
-  let html;
-  if(top){
-    html = '<ul>';
-  } else {
-    html = '<ul class="nested">';
-  }
+function generateHTML(folderTree) {
+  html = '<ul class="nested">';
   for (const item of folderTree) {
     html += `<li class="${item.type}">`;
     if (item.type === 'folder') {
       html += `<span class="Folder"><a>${item.name}</a></span>`;
-      html += generateHTML(item.children, false);
+      html += generateHTML(item.children);
     } else {
       html += `<a href="${item.html_url}" target="_blank">${item.name}</a>`;
     }
     html += '</li>';
+  }
+  html += '</ul>';
+  return html;
+}
+
+function generateTopHtml(folderTree) {
+  html = '<ul>';
+  for (const item of folderTree) {
+    if (item.type === 'folder') {
+      html += `<li class="${item.type}">`;
+      html += `<span class="Folder"><a>${item.name}</a></span>`;
+      html += generateHTML(item.children);
+      html += '</li>';
+    }
+  }
+  html += '</ul>';
+  return html;
+}
+
+
+function generateLettere(folderTree) {
+  html = '<ul>';
+  for (const item of folderTree) {
+    if (item.type === 'file') {
+      html += `<li>`;
+      html += `<span class="File"><a href="${item.html_url}" target="_blank">${item.name}</a></span>`;
+      html += '</li>';
+    }
   }
   html += '</ul>';
   return html;
@@ -63,9 +86,12 @@ const repo = 'Documents';
 const folderTree = await getRepoFolderTree(owner, repo);
 
 if (folderTree) {
-  const html = generateHTML(folderTree);
+  const html = generateTopHtml(folderTree);
+  const html2 = generateLettere(folderTree);
   const place = document.getElementById('files');
+  const place2 = document.getElementById('presentazione');
   place.innerHTML = html;
+  place2.innerHTML = html2;
   document.dispatchEvent(new Event('FolderTree'));
 }
 }
