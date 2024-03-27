@@ -35,13 +35,29 @@ try {
 }
 }
 
+// Here we have the generateVerbaliHTML function. Since it has only files and no other folder it need to cycle in reverse order through all the files.
+function generateVerbaliHTML(folderTree) {
+  html = '<ul class="nested">';
+  for (const item of folderTree.reverse()) {
+    html += `<li class="${item.type}">`;
+    html += `<a href="${item.html_url}" target="_blank">${item.name}</a>`;
+    html += '</li>';
+  }
+  html += '</ul>';
+  return html;
+}
+
 function generateHTML(folderTree) {
   html = '<ul class="nested">';
   for (const item of folderTree) {
     html += `<li class="${item.type}">`;
     if (item.type === 'folder') {
       html += `<span class="Folder"><a>${item.name}</a></span>`;
-      html += generateHTML(item.children);
+      if(item.name === 'Verbali'){
+        html += generateVerbaliHTML(item.children)
+      }else{
+        html += generateHTML(item.children);
+      }
     } else {
       html += `<a href="${item.html_url}" target="_blank">${item.name}</a>`;
     }
