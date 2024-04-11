@@ -85,31 +85,32 @@ function generateTopHtml(folderTree) {
 function generateLettere(folderTree) {
   html = '<ul>';
   // Checks if a file that has "Lettera di presentazione di PB", save it in a variable and pops it from the array
-  if(folderTree.length == 3){  
+  // if(folderTree.length == 3){  
     var lettera;
-    for (var i = 0; i < folderTree.length; i++) {
-        if (folderTree[i].name === 'Lettera di presentazione di PB.pdf') {
-            lettera = folderTree[i];
+    var i = -1;
+    for (const item of folderTree) {
+        i += 1;
+        console.log(item);
+        console.log(i);
+        if (item.name === 'Lettera di presentazione PB.pdf') {
+            lettera = item;
             folderTree.splice(i, 1);
             break;
         }
     }
+    console.log(lettera)
 
     if (lettera) {
         html += `<li>`;
         html += `<span class="File"><a href="${lettera.html_url}" target="_blank">${lettera.name}</a></span>`;
         html += '</li>';
     }
-  }
+  // }
   // Puts the lettera var on the top of the other items
   
 
   for (const item of folderTree.reverse()) {
     // Checks if a file that has "Lettera di presentazione di PB", save it in a variable and pops it from the array
-    if (item.name === 'Lettera di presentazione di PB.pdf') {
-      var lettera = item;
-      folderTree.pop();
-    }
     if (item.type === 'file') {
       html += `<li>`;
       html += `<span class="File"><a href="${item.html_url}" target="_blank">${item.name}</a></span>`;
