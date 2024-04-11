@@ -69,7 +69,7 @@ function generateHTML(folderTree) {
 
 function generateTopHtml(folderTree) {
   html = '<ul>';
-  for (const item of folderTree) {
+  for (const item of folderTree.reverse()) {
     if (item.type === 'folder') {
       html += `<li class="${item.type}">`;
       html += `<span class="Folder"><a>${item.name}</a></span>`;
